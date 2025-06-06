@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Success - NeiroTunes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="success-container">
+        <h1>Thank you for your order!</h1>
+        <p id="orderDetails"></p>
+        <p id="noData" style="display:none;">We couldn't find any order information.</p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const detailsEl = document.getElementById('orderDetails');
+            const noDataEl = document.getElementById('noData');
+            const raw = sessionStorage.getItem('pendingOrder');
+
+            if (raw) {
+                try {
+                    const order = JSON.parse(raw);
+                    let html = '';
+                    html += `Name: ${order.name}<br>`;
+                    html += `Email: ${order.email}<br>`;
+                    html += `Package: ${order.package}<br>`;
+                    if (order.genre) html += `Genre: ${order.genre}<br>`;
+                    if (order.rights) html += 'Rights Transfer included<br>';
+                    if (order.rush) html += 'Rush delivery<br>';
+                    html += `Total: $${order.total}`;
+                    detailsEl.innerHTML = html;
+                } catch (err) {
+                    detailsEl.style.display = 'none';
+                    noDataEl.style.display = 'block';
+                }
+            } else {
+                detailsEl.style.display = 'none';
+                noDataEl.style.display = 'block';
+            }
+
+            sessionStorage.removeItem('pendingOrder');
+        });
+    </script>
+</body>
+</html>
