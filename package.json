@@ -1,0 +1,9 @@
+{
+  "name": "neirotunes",
+  "version": "1.0.0",
+  "description": "Static website for the NeiroTunes music production service.",
+  "scripts": {
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "license": "MIT"
+}

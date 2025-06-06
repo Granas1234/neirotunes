@@ -10,7 +10,7 @@ Before deploying the site you should update several placeholders in `index.html`
 - **Facebook Pixel** – uncomment the snippet and set `YOUR_PIXEL_ID` if you use Facebook advertising.
 - **Hotjar** – uncomment the code and provide your Hotjar ID if desired.
 - **Social links** – update the Instagram, Facebook and TikTok URLs in the footer.
-- **Payment integration** – the order form currently shows an alert when submitted. Connect your payment processor (e.g. Stripe) where indicated in `scripts.js`.
+- **Payment integration** – update the `LEMON_CHECKOUT_URL` constant in `scripts.js` with your Lemon Squeezy checkout link. Include `<script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>` in `index.html` if you want to use the popup widget. Configure webhooks in your Lemon Squeezy dashboard to `https://yourdomain.com/webhooks/lemon` (or your chosen URL) so you can confirm orders after payment.
 - **Images and favicons** – provide an `og-preview.jpg` image (1200×630) for social sharing and create favicon files (`favicon-32x32.png`, `favicon-16x16.png`, `apple-touch-icon.png`).
 
 The main styles are located in `styles.css` and behaviour scripts in `scripts.js`.

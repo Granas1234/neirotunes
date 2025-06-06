@@ -1,3 +1,6 @@
+        // Lemon Squeezy checkout URL
+        const LEMON_CHECKOUT_URL = 'https://your-store.lemonsqueezy.com/checkout';
+
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -147,11 +150,24 @@
                 });
             }
             
-            // Here you would normally send to your payment processor
-            alert(`Thank you! Your order total is ${total}. You'll be redirected to secure payment.`);
-            
-            // In production, redirect to Stripe or your payment processor
-            // window.location.href = `your-payment-url?amount=${total}&package=${data.package}`;
+            // Capture order details for confirmation after payment
+            const orderInfo = {
+                name: data.name,
+                email: data.email,
+                package: data.package,
+                rights: !!data.rights,
+                rush: !!data.rush,
+                genre: data.genre || '',
+                total
+            };
+            sessionStorage.setItem('pendingOrder', JSON.stringify(orderInfo));
+
+            // Redirect to Lemon Squeezy checkout or open the widget
+            if (typeof createLemonSqueezy !== 'undefined') {
+                createLemonSqueezy(LEMON_CHECKOUT_URL);
+            } else {
+                window.location.href = LEMON_CHECKOUT_URL;
+            }
         });
 
         // Intersection Observer for fade-in animations
