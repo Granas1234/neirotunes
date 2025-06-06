@@ -25,7 +25,7 @@ Before deploying the site you should update several placeholders in `index.html`
 - **Google Analytics** – replace `G-XXXXXXXXXX` with your tracking ID.
 - **Facebook Pixel** – uncomment the snippet and set `YOUR_PIXEL_ID` if you use Facebook advertising.
 - **Hotjar** – uncomment the code and provide your Hotjar ID if desired.
-- **Social links** – update the Instagram, TikTok and YouTube URLs in the footer.
+- **Social links** – update the Instagram, TikTok, and YouTube URLs in the footer.
 
 - **Payment integration** – set the `CHECKOUT_URL` constant in `scripts.js` to your payment provider's checkout link. Optionally include the provider's widget script in `index.html` if it exposes a `createCheckoutWidget()` function. Configure webhooks to `https://yourdomain.com/webhooks/payment` (or your chosen URL) so you can confirm orders after payment.
 
