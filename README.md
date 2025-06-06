@@ -26,8 +26,9 @@ Before deploying the site you should update several placeholders in `index.html`
 - **Facebook Pixel** – uncomment the snippet and set `YOUR_PIXEL_ID` if you use Facebook advertising.
 - **Hotjar** – uncomment the code and provide your Hotjar ID if desired.
 - **Social links** – update the Instagram, Facebook and TikTok URLs in the footer.
-- **Payment integration** – update the `LEMON_CHECKOUT_URL` constant in `scripts.js` with your Lemon Squeezy checkout link. Include `<script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>` in `index.html` if you want to use the popup widget. Configure webhooks in your Lemon Squeezy dashboard to `https://yourdomain.com/webhooks/lemon` (or your chosen URL) so you can confirm orders after payment.
-- **Fondy redirect** – if you use Fondy for payments, set its success URL to `/success.html`. This page reads the `pendingOrder` saved in `sessionStorage` and shows a brief summary after checkout.
+
+- **Payment integration** – update the `FONDY_CHECKOUT_URL` constant in `scripts.js` with your Fondy payment URL or merchant ID. Include `<script src="https://pay.fondy.eu/latest/checkout.js"></script>` in `index.html` if you want to use Fondy’s widget.
+
 - **Images and favicons** – provide an `og-preview.jpg` image (1200×630) for social sharing and create favicon files (`favicon-32x32.png`, `favicon-16x16.png`, `apple-touch-icon.png`).
 
 The main styles are located in `styles.css` and behaviour scripts in `scripts.js`.

@@ -1,5 +1,5 @@
-        // Lemon Squeezy checkout URL
-        const LEMON_CHECKOUT_URL = 'https://your-store.lemonsqueezy.com/checkout';
+        // Fondy checkout URL
+        const FONDY_CHECKOUT_URL = 'https://pay.fondy.eu/merchant/checkout';
 
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -162,12 +162,8 @@
             };
             sessionStorage.setItem('pendingOrder', JSON.stringify(orderInfo));
 
-            // Redirect to Lemon Squeezy checkout or open the widget
-            if (typeof createLemonSqueezy !== 'undefined') {
-                createLemonSqueezy(LEMON_CHECKOUT_URL);
-            } else {
-                window.location.href = LEMON_CHECKOUT_URL;
-            }
+            // Redirect to Fondy checkout link
+            window.location.href = FONDY_CHECKOUT_URL;
         });
 
         // Intersection Observer for fade-in animations
