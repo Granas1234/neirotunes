@@ -25,7 +25,7 @@ Before deploying the site you should update several placeholders in `index.html`
 - **Google Analytics** – replace `G-XXXXXXXXXX` with your tracking ID.
 - **Facebook Pixel** – uncomment the snippet and set `YOUR_PIXEL_ID` if you use Facebook advertising.
 - **Hotjar** – uncomment the code and provide your Hotjar ID if desired.
-- **Social links** – update the Instagram, Facebook and TikTok URLs in the footer.
+- **Social links** – update the Instagram, TikTok and YouTube URLs in the footer.
 
 - **Payment integration** – update the `FONDY_CHECKOUT_URL` constant in `scripts.js` with your Fondy payment URL or merchant ID. Include `<script src="https://pay.fondy.eu/latest/checkout.js"></script>` in `index.html` if you want to use Fondy’s widget.
 
