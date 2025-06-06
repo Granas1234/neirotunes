@@ -18,17 +18,26 @@
             const noDataEl = document.getElementById('noData');
             const raw = sessionStorage.getItem('pendingOrder');
 
+            function escapeHtml(str) {
+                return String(str)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#039;');
+            }
+
             if (raw) {
                 try {
                     const order = JSON.parse(raw);
                     let html = '';
-                    html += `Name: ${order.name}<br>`;
-                    html += `Email: ${order.email}<br>`;
-                    html += `Package: ${order.package}<br>`;
-                    if (order.genre) html += `Genre: ${order.genre}<br>`;
+                    html += `Name: ${escapeHtml(order.name)}<br>`;
+                    html += `Email: ${escapeHtml(order.email)}<br>`;
+                    html += `Package: ${escapeHtml(order.package)}<br>`;
+                    if (order.genre) html += `Genre: ${escapeHtml(order.genre)}<br>`;
                     if (order.rights) html += 'Rights Transfer included<br>';
                     if (order.rush) html += 'Rush delivery<br>';
-                    html += `Total: $${order.total}`;
+                    html += `Total: $${escapeHtml(order.total)}`;
                     detailsEl.innerHTML = html;
                 } catch (err) {
                     detailsEl.style.display = 'none';
