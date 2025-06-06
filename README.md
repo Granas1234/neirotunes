@@ -2,6 +2,22 @@
 
 This repository contains the source for **NeiroTunes**, a single page website for a personal music production service. The page is built with plain HTML, CSS and JavaScript.
 
+## Packages
+
+NeiroTunes offers three levels of service:
+
+- **Basic – $50** – A 2-3 minute personalized song with AI-enhanced vocals and professional mixing. Includes one revision, 48‑hour delivery and distribution to Spotify/Apple Music. Royalties remain with the producer.
+- **Premium – $150** – Adds a professional vocalist, studio-quality production, behind-the-scenes video, acoustic version and personal video message. Three revisions included. Royalties remain with the producer.
+- **Rights Transfer – +$500** – Purchase full copyright ownership, master recordings and all future royalties.
+
+Unless you buy the Rights Transfer, you receive personal use rights while the producer keeps streaming royalties.
+
+### Add-ons
+
+- **Wedding Package** – Ceremony usage rights, wedding version, instrumental for the first dance and a keepsake vinyl record.
+- **Business Anthem** – Corporate theme song with internal use rights, 30‑second spot, instrumental and branded artwork.
+- **Sync License** – Allows the song in a single commercial project such as ads, videos or films. Price varies from $200 to $1000.
+
 ## Customization
 
 Before deploying the site you should update several placeholders in `index.html`:
