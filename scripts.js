@@ -1,5 +1,5 @@
-        // Fondy checkout URL
-        const FONDY_CHECKOUT_URL = 'https://pay.fondy.eu/merchant/checkout';
+        // Checkout URL for your payment provider
+        const CHECKOUT_URL = 'https://pay.fondy.eu/merchant/checkout';
 
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -162,8 +162,12 @@
             };
             sessionStorage.setItem('pendingOrder', JSON.stringify(orderInfo));
 
-            // Redirect to Fondy checkout link
-            window.location.href = FONDY_CHECKOUT_URL;
+            // Redirect to the checkout link or open your provider's widget
+            if (typeof createCheckoutWidget !== 'undefined') {
+                createCheckoutWidget(CHECKOUT_URL);
+            } else {
+                window.location.href = CHECKOUT_URL;
+            }
         });
 
         // Intersection Observer for fade-in animations
