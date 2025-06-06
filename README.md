@@ -27,7 +27,7 @@ Before deploying the site you should update several placeholders in `index.html`
 - **Hotjar** – uncomment the code and provide your Hotjar ID if desired.
 - **Social links** – update the Instagram, Facebook and TikTok URLs in the footer.
 
-- **Payment integration** – update the `FONDY_CHECKOUT_URL` constant in `scripts.js` with your Fondy payment URL or merchant ID. Include `<script src="https://pay.fondy.eu/latest/checkout.js"></script>` in `index.html` if you want to use Fondy’s widget.
+- **Payment integration** – set the `CHECKOUT_URL` constant in `scripts.js` to your payment provider's checkout link. Optionally include the provider's widget script in `index.html` if it exposes a `createCheckoutWidget()` function. Configure webhooks to `https://yourdomain.com/webhooks/payment` (or your chosen URL) so you can confirm orders after payment.
 
 - **Images and favicons** – provide an `og-preview.jpg` image (1200×630) for social sharing and create favicon files (`favicon-32x32.png`, `favicon-16x16.png`, `apple-touch-icon.png`).
 
